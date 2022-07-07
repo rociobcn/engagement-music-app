@@ -1,0 +1,223 @@
+<div class="w-full max-w-2xl mt-12">
+  <form
+    class="bg-zinc-800 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+    (ngSubmit)="onSubmit()"
+    [formGroup]="form"
+  >
+    <div class="mb-4">
+      <label class="block text-green-500 text-ml font-bold mb-2" for="firstName">
+        First Name
+      </label>
+      <input
+        formControlName="firstName"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="firstName"
+        type="text"
+        placeholder="First Name"
+      />
+      <p
+        class="text-red-600 text-sm mt-2"
+        *ngIf="firstNameField.hasError('required') && firstNameField.touched"
+      >
+        First Name is required
+      </p>
+      <p
+        class="text-red-600 text-sm mt-2"
+        *ngIf="firstNameField.hasError('firstName')"
+      >
+        Invalid First Name, minim 3 characters
+      </p>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-green-500 text-ml font-bold mb-2" for="lastName">
+        Last Name
+      </label>
+      <input
+        formControlName="lastName"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="lastName"
+        type="text"
+        placeholder="Last Name"
+      />
+      <p
+        class="text-red-600 text-sm mt-2"
+        *ngIf="lastNameField.hasError('required') && lastNameField.touched"
+      >
+        Last Name is required
+      </p>
+      <p
+        class="text-red-600 text-sm mt-2"
+        *ngIf="lastNameField.hasError('lastName')"
+      >
+        Invalid Last Name, minim 3 characters
+      </p>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-green-500 text-ml font-bold mb-2" for="email">
+        Email
+      </label>
+      <input
+        formControlName="email"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="email"
+        type="email"
+        placeholder="Email"
+      />
+      <p
+        class="text-red-600 text-sm mt-2"
+        *ngIf="emailField.hasError('required') && emailField.touched"
+      >
+        Email is required
+      </p>
+      <p class="text-red-600 text-sm mt-2" *ngIf="emailField.hasError('email')">
+        Invalid email
+      </p>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-green-500 text-ml font-bold mb-2" for="dni">
+        DNI
+      </label>
+      <input
+        formControlName="dni"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="dni"
+        type="text"
+        placeholder="DNI"
+      />
+      <p
+        class="text-red-600 text-sm mt-2"
+        *ngIf="dniField.hasError('required') && dniField.touched"
+      >
+        DNI is required
+      </p>
+      <p class="text-red-600 text-sm mt-2" *ngIf="dniField.hasError('dni')">
+        Invalid DNI
+      </p>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-green-500 text-ml font-bold mb-2" for="phone">
+        Phone
+      </label>
+      <input
+        formControlName="phone"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="phone"
+        type="text"
+        placeholder="Phone"
+      />
+      <p
+        class="text-red-600 text-sm mt-2"
+        *ngIf="phoneField.hasError('required') && phoneField.touched"
+      >
+        Phone is required
+      </p>
+      <p class="text-red-600 text-sm mt-2" *ngIf="phoneField.hasError('phone')">
+        Invalid phone
+      </p>
+    </div>
+    <div class="mb-4">
+      <label class="block text-green-500 text-ml font-bold mb-2" for="picture">
+        Picture
+      </label>
+      <input
+        formControlName="picture"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="picture"
+        type="file"
+        placeholder="Picture"
+      />
+    </div>
+    <div class="mb-4">
+      <label
+        class="block text-green-500 text-ml font-bold mb-2"
+        for="position"
+      >
+        Position
+      </label>
+      <input
+        formControlName="position"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="position"
+        type="text"
+        placeholder="Position"
+      />
+      <p
+        class="text-red-600 text-sm mt-2"
+        *ngIf="
+        positionField.hasError('required') && positionField.touched
+        "
+      >
+        Position is required
+      </p>
+    </div>
+
+    
+    <div class="mb-4">
+      <label class="block text-green-500 text-ml font-bold mb-2" for="username">
+        Username
+      </label>
+      <input
+        formControlName="username"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="username"
+        type="text"
+        placeholder="Username"
+      />
+      <p
+        class="text-red-600 text-sm mt-2"
+        *ngIf="usernameField.hasError('required') && usernameField.touched"
+      >
+        User is required
+      </p>
+      <p
+        class="text-red-600 text-sm mt-2"
+        *ngIf="usernameField.hasError('username')"
+      >
+        Invalid username
+      </p>
+    </div>
+
+    <div class="mb-6">
+      <label class="block text-green-500 text-ml font-bold mb-2" for="password">
+        Password
+      </label>
+      <input
+        formControlName="password"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+        id="password"
+        type="password"
+        placeholder="****"
+      />
+      <p
+        class="text-red-600 text-sm"
+        *ngIf="passwordField.hasError('required') && passwordField.touched"
+      >
+        Password is required
+      </p>
+      <p
+        class="text-red-600 text-sm"
+        *ngIf="passwordField.hasError('minlength')"
+      >
+        The password must have at least 4 characters
+      </p>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <button
+        [disabled]="form.invalid"
+        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline"
+        type="submit"
+      >
+        Sign Up
+      </button>
+      <p *ngIf="invalidLogin" class="text-red-600 text-sm">Invalid form</p>
+    </div>
+  </form>
+  <p class="text-center text-gray-500 text-xs">
+    &copy;2022 Rocio Corp. All rights reserved.
+  </p>
+</div>

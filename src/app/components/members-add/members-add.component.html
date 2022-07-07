@@ -1,0 +1,115 @@
+<div class="w-full max-w-2xl mt-12">
+    <form
+      class="bg-zinc-800 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      (ngSubmit)="onSubmit()"
+      [formGroup]="form"
+    >
+      <div class="mb-4">
+        <label class="block text-green-500 text-ml font-bold mb-2" for="firstName">
+          First Name
+        </label>
+        <input
+          formControlName="firstName"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="firstName"
+          type="text"
+          placeholder="First Name"
+        />
+        <p
+          class="text-red-600 text-sm mt-2"
+          *ngIf="firstNameField.hasError('required') && firstNameField.touched"
+        >
+          First Name is required
+        </p>
+        <p
+          class="text-red-600 text-sm mt-2"
+          *ngIf="firstNameField.hasError('firstName')"
+        >
+          Invalid First Name, minim 3 characters
+        </p>
+      </div>
+  
+      <div class="mb-4">
+        <label class="block text-green-500 text-ml font-bold mb-2" for="lastName">
+          Last Name
+        </label>
+        <input
+          formControlName="lastName"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="lastName"
+          type="text"
+          placeholder="Last Name"
+        />
+        <p
+          class="text-red-600 text-sm mt-2"
+          *ngIf="lastNameField.hasError('required') && lastNameField.touched"
+        >
+          Last Name is required
+        </p>
+        <p
+          class="text-red-600 text-sm mt-2"
+          *ngIf="lastNameField.hasError('lastName')"
+        >
+          Invalid Last Name, minim 3 characters
+        </p>
+      </div>
+      <div class="mb-4">
+        <label class="block text-red-600 text-ml font-bold mb-2" for="genre">
+          Instrument
+        </label>
+        <select
+          name="instrument"
+          id="instrument"
+          formControlName="instrument"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        >
+          <option value="">Select a Instrument</option>
+          <option class="text-red-600" value="{{item}}" *ngFor="let item of instrument">
+            {{ item }}
+          </option>
+        </select>
+        <p
+          class="text-green-500 text-sm mt-2"
+          *ngIf="instrumentField.hasError('required') && instrumentField.touched"
+        >
+          Instrument is required
+        </p>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-red-600 text-ml font-bold mb-2" for="genre">
+          Single
+        </label>
+        <select
+          name="single"
+          id="single"
+          formControlName="single"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        >
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+        <p
+          class="text-green-500 text-sm mt-2"
+          *ngIf="singleField.hasError('required') && singleField.touched"
+        >
+          Single is required
+        </p>
+      </div>
+    
+  
+      <div class="flex items-center justify-between">
+        <button
+          [disabled]="form.invalid"
+          class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline"
+          type="submit"
+        >
+          Sign Up
+        </button>
+        <p *ngIf="invalidLogin" class="text-red-600 text-sm">Invalid form</p>
+      </div>
+    </form>
+    <p class="text-center text-gray-500 text-xs">
+      &copy;2022 Rocio Corp. All rights reserved.
+    </p>
+  </div>

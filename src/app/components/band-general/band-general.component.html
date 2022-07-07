@@ -1,0 +1,88 @@
+<div class="mt-16 flex flex-col justify-center mb-5">
+  <div class="flex justify-center">
+    <h1
+      class="w-3/6 rounded-xl font-bold text-xl text-center inline-block bg-zinc-800 rounded px-3 py-1 text-white mr-2 mb-2"
+    >
+      Hi Band! You want to do?
+    </h1>
+    <button
+          class="m-2 lg:inline-block py-2 px-6 bg-red-600 hover:bg-red-800 text-sm text-white font-bold rounded-xl transition duration-200"
+          (click)="signOut()"
+        >
+          Sign out
+        </button>
+  </div>
+
+  <div class="md:flex flex-row justify-center mt-16">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg bg-zinc-800 mr-28">
+      <img
+        class="w-full"
+        src="https://thumbs.dreamstime.com/b/team-members-black-solid-icon-vector-illustration-isolated-white-background-121173073.jpg"
+        alt="Sunset in the mountains"
+      />
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2 text-red-600">MEMBERS</div>
+        <p class="text-white text-base">
+            Add, remove and consult your band members to keep it updated.
+        </p>
+      </div>
+      <div class="px-6 pt-4 pb-2 mb-2">
+        <button
+          class="inline-block py-2 px-6 bg-red-600 hover:bg-red-800 text-sm text-white font-bold rounded-xl transition duration-200"
+          routerLink="/addmember"
+        >
+          Add member
+        </button>
+        <button
+          class="m-2 lg:inline-block py-2 px-6 bg-red-600 hover:bg-red-800 text-sm text-white font-bold rounded-xl transition duration-200"
+          routerLink="/memberlist"
+        >
+          List members
+        </button>
+      </div>
+    </div>
+    <div class="max-w-sm rounded overflow-hidden shadow-lg bg-zinc-800 mr-28">
+        <img
+          class="w-full"
+          src="https://www.kindpng.com/picc/m/707-7079449_manage-user-user-management-icon-png-transparent-png.png"
+          alt="Sunset in the mountains"
+        />
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 text-red-600">PROFILE</div>
+          <p class="text-white text-base">
+            You can change your registration details at any time.
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2 mb-2">
+          <button
+            class="inline-block py-2 px-6 bg-red-600 hover:bg-red-800 text-sm text-white font-bold rounded-xl transition duration-200"
+            routerLink="/profileband"
+          >
+            Access your profile
+          </button>
+        </div>
+      </div>
+
+    <div class="max-w-sm rounded overflow-hidden shadow-lg bg-zinc-800">
+      <img
+        class="w-full"
+        src="https://www.kindpng.com/picc/m/154-1547142_transparent-calendar-icons-png-date-and-time-icon.png"
+        alt="Sunset in the mountains"
+      />
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2 text-red-600">BOOKINGS</div>
+        <p class="text-white text-base">
+            Consult and access all the reservations that the agents have made.
+        </p>
+      </div>
+      <div class="px-6 pt-4 pb-2 mb-2">
+        <button
+          class="inline-block py-2 px-6 bg-red-600 hover:bg-red-800 text-sm text-white font-bold rounded-xl transition duration-200"
+          routerLink="/bookingband"
+        >
+        Access Bookings
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

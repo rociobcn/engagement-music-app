@@ -1,0 +1,254 @@
+<div class="w-full max-w-2xl mt-12">
+    <form
+      class="bg-zinc-800 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      (ngSubmit)="onSubmit()"
+      [formGroup]="form"
+    >
+      <div class="mb-4">
+        <label class="block text-red-600 text-ml font-bold mb-2" for="firstName">
+          First Name
+        </label>
+        <input
+          formControlName="firstName"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="firstName"
+          type="text"
+          placeholder="First Name"
+        
+        />
+        <p
+        class="text-green-500 text-sm mt-2"
+        *ngIf="firstNameField.hasError('required') && firstNameField.touched"
+      >
+        First Name is required
+      </p>
+        <p
+          class="text-green-500 text-sm mt-2"
+          *ngIf="firstNameField.hasError('firstName')"
+        >
+          Invalid First Name, minim 3 characters
+        </p>
+      </div>
+  
+      <div class="mb-4">
+        <label class="block text-red-600 text-ml font-bold mb-2" for="lastName">
+          Last Name
+        </label>
+        <input
+          formControlName="lastName"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="lastName"
+          type="text"
+          placeholder="Last Name"
+          
+        />
+        <p
+        class="text-green-500 text-sm mt-2"
+        *ngIf="lastNameField.hasError('required') && lastNameField.touched"
+      >
+        Last Name is required
+      </p>
+        <p
+          class="text-green-500 text-sm mt-2"
+          *ngIf="lastNameField.hasError('lastName')"
+        >
+          Invalid Last Name, minim 3 characters
+        </p>
+      </div>
+  
+      <div class="mb-4">
+        <label class="block text-red-600 text-ml font-bold mb-2" for="email">
+          Email
+        </label>
+        <input
+          formControlName="email"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="email"
+          type="email"
+          placeholder="Email"
+         
+        />
+        <p
+        class="text-green-500 text-sm mt-2"
+        *ngIf="emailField.hasError('required') && emailField.touched"
+      >
+        Email is required
+      </p>
+        <p class="text-green-500 text-sm mt-2" *ngIf="emailField.hasError('email')">
+          Invalid email
+        </p>
+      </div>
+  
+      <div class="mb-4">
+        <label class="block text-red-600 text-ml font-bold mb-2" for="dni">
+          DNI
+        </label>
+        <input
+          formControlName="dni"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="dni"
+          type="text"
+          placeholder="DNI"
+         
+        />
+        <p
+        class="text-green-500 text-sm mt-2"
+        *ngIf="dniField.hasError('required') && dniField.touched"
+      >
+        DNI is required
+      </p>
+        <p class="text-green-500 text-sm mt-2" *ngIf="dniField.hasError('dni')">
+          Invalid DNI
+        </p>
+      </div>
+  
+      <div class="mb-4">
+        <label class="block text-red-600 text-ml font-bold mb-2" for="phone">
+          Phone
+        </label>
+        <input
+          formControlName="phone"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="phone"
+          type="text"
+          placeholder="Phone"
+          
+        />
+        <p
+        class="text-green-500 text-sm mt-2"
+        *ngIf="phoneField.hasError('required') && phoneField.touched"
+      >
+        Phone is required
+      </p>
+        <p class="text-green-500 text-sm mt-2" *ngIf="phoneField.hasError('phone')">
+          Invalid phone
+        </p>
+      </div>
+      <div class="mb-4">
+        <label class="block text-red-600 text-ml font-bold mb-2" for="picture">
+          Picture
+        </label>
+        <input
+          formControlName="picture"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="picture"
+          type="file"
+          placeholder="Picture"
+        />
+      </div>
+      <div class="mb-4">
+        <label
+          class="block text-red-600 text-ml font-bold mb-2"
+          for="nameofGroup"
+        >
+          Name of Group
+        </label>
+        <input
+          formControlName="nameOfGroup"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="nameofGroup"
+          type="text"
+          placeholder="Name of Group"
+       
+        />
+        <p
+        class="text-green-500 text-sm mt-2"
+        *ngIf="
+          nameOfGroupField.hasError('required') && nameOfGroupField.touched
+        "
+      >
+        Name of Group is required
+      </p>
+      </div>
+  
+      <div class="mb-4">
+        <label class="block text-red-600 text-ml font-bold mb-2" for="genre">
+          Genre
+        </label>
+        <select
+          name="genre"
+          id="genre"
+          formControlName="genre"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        >
+          <option value="">Select a Genre</option>
+          <option class="text-red-600" value="{{item}}" *ngFor="let item of genre">
+            {{ item }}
+          </option>
+        </select>
+        <p
+        class="text-green-500 text-sm mt-2"
+        *ngIf="genreField.hasError('required') && genreField.touched"
+      >
+        Genre is required
+      </p>
+      </div>
+  
+      <div class="mb-4">
+        <label class="block text-red-600 text-ml font-bold mb-2" for="priceHour">
+          Price Hour
+        </label>
+        <input
+          formControlName="priceHour"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="priceHour"
+          type="text"
+          placeholder="Price Hour"
+          
+        />
+        <p
+        class="text-green-500 text-sm mt-2"
+        *ngIf="priceHourField.hasError('required') && priceHourField.touched"
+      >
+        Price Hour is required
+      </p>
+        <p
+          class="text-green-500 text-sm mt-2"
+          *ngIf="priceHourField.hasError('priceHour')"
+        >
+          Invalid price
+        </p>
+      </div>
+  
+      <div class="mb-6">
+        <label class="block text-red-600 text-ml font-bold mb-2" for="password">
+          Password
+        </label>
+        <input
+          formControlName="password"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+          id="password"
+          type="password"
+          placeholder="****"
+          
+        />
+        <p
+        class="text-green-500 text-sm"
+        *ngIf="passwordField.hasError('required') && passwordField.touched"
+      >
+        Password is required
+      </p>
+        <p
+          class="text-green-500 text-sm"
+          *ngIf="passwordField.hasError('minlength')"
+        >
+          The password must have at least 4 characters
+        </p>
+      </div>
+  
+      <div class="flex items-center justify-between">
+        <button
+          [disabled]="form.invalid"
+          class="bg-red-600 hover:bg-red-800 text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline"
+          type="submit"
+        >
+          Sign Up
+        </button>
+        <p *ngIf="invalidLogin" class="text-green-500 text-sm">Invalid form</p>
+      </div>
+    </form>
+    <p class="text-center text-gray-500 text-xs">
+      &copy;2022 Rocio Corp. All rights reserved.
+    </p>
+  </div>
+  
